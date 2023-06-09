@@ -1,6 +1,3 @@
-import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-
 import { GlobalStyle } from './GlobalStyle';
 import Form from './Form/Form';
 import Search from './Search/Search';
