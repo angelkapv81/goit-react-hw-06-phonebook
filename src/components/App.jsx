@@ -1,16 +1,26 @@
-export const App = () => {
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
+import { GlobalStyle } from './GlobalStyle';
+import Form from './Form/Form';
+import Search from './Search/Search';
+import Contacts from './Contacts/Contacts';
+
+function App() {
+  const contacts = useSelector(state => state.contacts);
+
+  useEffect(() => {
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+  }, [contacts]);
+
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <section>
+      <Form />
+      <Search />
+      <Contacts />
+      <GlobalStyle />
+    </section>
   );
-};
+}
+
+export default App;
