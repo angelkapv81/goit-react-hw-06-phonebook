@@ -7,12 +7,6 @@ import Search from './Search/Search';
 import Contacts from './Contacts/Contacts';
 
 function App() {
-  const contacts = useSelector(state => state.contacts);
-
-  useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contacts]);
-
   return (
     <section>
       <Form />
